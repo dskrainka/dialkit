@@ -46,3 +46,10 @@ AGENTS.md
 
 # Generated adapter browser fixtures
 .toolbar-fixtures/
+
+# SwiftPM and local Xcode state
+.build/
+.swiftpm/
+DerivedData/
+xcuserdata/
+*.xcuserstate

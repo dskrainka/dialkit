@@ -1,5 +1,13 @@
 # DialKit
 
+## SwiftUI / iOS in Device Hub (fork extension)
+
+This fork adds a Swift package with the existing DialKit editor embedded in a debug-only
+SwiftUI panel. Tune the running native app in Xcode's Device Hub (Simulator), then export
+the values for your source. No server, network permission, or account is needed.
+
+See [SwiftUI setup and demo](docs/swiftui.md). The original web adapters remain available below.
+
 Live controls for tuning interfaces. Adjust values, compare versions, and edit animation timing in your running app.
 
 Works with React, Solid, Svelte, Vue, and plain JavaScript. The vanilla adapter has no runtime dependencies.

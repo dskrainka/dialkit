@@ -1,0 +1,50 @@
+name: DialKitDemo
+options:
+  bundleIdPrefix: dev.dialkit
+  deploymentTarget:
+    iOS: "17.0"
+packages:
+  DialKitSwiftUI:
+    path: ../..
+targets:
+  DialKitDemo:
+    type: application
+    platform: iOS
+    sources: [DialKitDemo]
+    dependencies:
+      - package: DialKitSwiftUI
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: dev.dialkit.swiftui.demo
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
+        CODE_SIGNING_ALLOWED: NO
+  DialKitDemoTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: [../../Tests/DialKitSwiftUITests]
+    dependencies:
+      - target: DialKitDemo
+      - package: DialKitSwiftUI
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        CODE_SIGNING_ALLOWED: NO
+  DialKitDemoUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources: [DialKitDemoUITests]
+    dependencies:
+      - target: DialKitDemo
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        CODE_SIGNING_ALLOWED: NO
+schemes:
+  DialKitDemo:
+    build:
+      targets:
+        DialKitDemo: all
+    test:
+      targets: [DialKitDemoTests, DialKitDemoUITests]
