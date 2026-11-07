@@ -13,7 +13,8 @@ private struct DialEditorModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         #if DEBUG
-        content.safeAreaInset(edge: .bottom, spacing: 0) {
+        VStack(spacing: 0) {
+            content.frame(maxWidth: .infinity, maxHeight: .infinity)
             VStack(spacing: 0) {
                 HStack {
                     Button { expanded.toggle() } label: {
